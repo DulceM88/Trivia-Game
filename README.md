@@ -8,5 +8,5 @@
 ##Technologies Used
 - Bootstrap to streamline appearance of website
 - CSS for further customization of bootstrap
--JavaScript functions and for loops
--jQuery to dynamically manipulate DOM
+- JavaScript functions and for loops
+- jQuery to dynamically manipulate DOM
