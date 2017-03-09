@@ -102,7 +102,7 @@ $("#button1").on("click", displayQuiz);
 
 //function which displays full quiz
 function displayQuiz(){
-	//console.log("this button works");
+	
 	//function call to start counter
 	counter.start();
 	//changes text in button to done
@@ -127,24 +127,29 @@ function displayQuiz(){
 	//displays full question with choices in html
 	$("#slide-holder").append(questionDiv); 
 
-	//non functioning event listener for button, triggers function which displays score 
+	//event listener for button, triggers function which displays score 
 	$("#button1").on("click",displayScore);
-
+	}
+	//timeout function which stops quiz after 3minutes
+	var minute= (1000*60);
+	setTimeout(displayScore, minute*3);
 	
-	}
-	//conditional which would trigger display score screen if certain counter value was reached
-	if (converted=== "0:20"){
-			displayScore();
-
-	}
-
 	
 }
-//function to evaluate user input  and display score 
-function displayScore(){
-	alert("times up");
 
 	
+
+//function to evaluate user input  and display score 
+function displayScore(){
+
+
+	$("#button1").html("Try again?");
+	$("#button1").on("click",displayQuiz);
+	//this would display score 
+	$("#slide-holder").html("you scored"+ correct+" correct! and "+ wrong +"incorrect");
+	//appends picture of cast
+	var ramaFan= $("<img class='img-responsive' src= 'assets/images/Futurama-cast.png'>");
+	$("#slide-holder").append(ramaFan);
     }
 
 
